@@ -1362,12 +1362,12 @@ int x509_validate ( struct x509_certificate *cert,
 	}
 
 	/* Fail if OCSP is required */
-	if ( cert->extensions.auth_info.ocsp.uri.len &&
-	     ( ! cert->extensions.auth_info.ocsp.good ) ) {
-		DBGC ( cert, "X509 %p \"%s\" requires an OCSP check\n",
-		       cert, x509_name ( cert ) );
-		return -EACCES_OCSP_REQUIRED;
-	}
+// 	if ( cert->extensions.auth_info.ocsp.uri.len &&
+// 	     ( ! cert->extensions.auth_info.ocsp.good ) ) {
+// 		DBGC ( cert, "X509 %p \"%s\" requires an OCSP check\n",
+// 		       cert, x509_name ( cert ) );
+// 		return -EACCES_OCSP_REQUIRED;
+// 	}
 
 	/* Calculate effective path length */
 	cert->path_remaining = ( issuer->path_remaining - 1 );
